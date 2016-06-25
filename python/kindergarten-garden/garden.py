@@ -1,6 +1,3 @@
-from collections import namedtuple
-
-
 class Garden:
     plant_dict = {
         'V': 'Violets',
@@ -16,7 +13,11 @@ class Garden:
                 'Ginny', 'Harriet', 'Ileana', 'Joseph', 'Kincaid', 'Larry'
             ]
         self.garden = garden
-        self.students = students
+        self.students = sorted(students)
+        self.garden_rows = self.garden.split('\n')
 
     def plants(self, student):
-        pass
+        student_pos = self.students.index(student)
+        p = 2 * student_pos
+        correct_plants = ''.join([row[p:p+2] for row in self.garden_rows])
+        return [Garden.plant_dict[plant] for plant in correct_plants]
