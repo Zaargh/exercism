@@ -1,6 +1,6 @@
 def on_square(n):
-    pass
+    return 2 ** (n-1)
 
 
 def total_after(n):
-    pass
+    return sum(on_square(x) for x in range(1, n+1))
