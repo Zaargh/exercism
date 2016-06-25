@@ -1,3 +1,6 @@
+# TODO refactor to use setattr
+
+
 class SpaceAge:
     EARTH_YEAR = 31557600
     PLANETS = {
