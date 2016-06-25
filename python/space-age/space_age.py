@@ -14,4 +14,28 @@ class SpaceAge:
         self.seconds = seconds
 
     def on_earth(self):
-        return self.seconds / SpaceAge.EARTH_YEAR
+        return round(float(self.seconds) / SpaceAge.EARTH_YEAR, 2)
+
+    def __on_planet(self, planet):
+        return round(self.on_earth() / SpaceAge.PLANETS[planet], 2)
+
+    def on_mercury(self):
+        return self.__on_planet('Mercury')
+
+    def on_venus(self):
+        return self.__on_planet('Venus')
+
+    def on_mars(self):
+        return self.__on_planet('Mars')
+
+    def on_jupiter(self):
+        return self.__on_planet('Jupiter')
+
+    def on_saturn(self):
+        return self.__on_planet('Saturn')
+
+    def on_uranus(self):
+        return self.__on_planet('Uranus')
+
+    def on_neptune(self):
+        return self.__on_planet('Neptune')
