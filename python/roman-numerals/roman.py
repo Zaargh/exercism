@@ -1,0 +1,2 @@
+def numeral(arabic):
+    pass
