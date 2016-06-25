@@ -1,7 +1,13 @@
+import collections
+
+
 class School:
 
     def __init__(self, school_name):
-        pass
+        self.grades = collections.defaultdict(list)
 
     def grade(self, grade_no):
-        return []
+        return self.grades[grade_no]
+
+    def add(self, student, grade):
+        self.grades[grade].append(student)
